@@ -8,22 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		CECA6C6624754D9C00AC7C12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA6C6524754D9C00AC7C12 /* AppDelegate.swift */; };
-		CECA6C6824754D9C00AC7C12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA6C6724754D9C00AC7C12 /* SceneDelegate.swift */; };
-		CECA6C6A24754D9C00AC7C12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA6C6924754D9C00AC7C12 /* ViewController.swift */; };
 		CECA6C6D24754D9C00AC7C12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECA6C6B24754D9C00AC7C12 /* Main.storyboard */; };
 		CECA6C6F24754D9E00AC7C12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CECA6C6E24754D9E00AC7C12 /* Assets.xcassets */; };
 		CECA6C7224754D9E00AC7C12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECA6C7024754D9E00AC7C12 /* LaunchScreen.storyboard */; };
+		CECA6C7A2475519600AC7C12 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA6C792475519600AC7C12 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CECA6C6224754D9C00AC7C12 /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECA6C6524754D9C00AC7C12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CECA6C6724754D9C00AC7C12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CECA6C6924754D9C00AC7C12 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CECA6C6C24754D9C00AC7C12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CECA6C6E24754D9E00AC7C12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CECA6C7124754D9E00AC7C12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CECA6C7324754D9E00AC7C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CECA6C792475519600AC7C12 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				CECA6C6524754D9C00AC7C12 /* AppDelegate.swift */,
-				CECA6C6724754D9C00AC7C12 /* SceneDelegate.swift */,
-				CECA6C6924754D9C00AC7C12 /* ViewController.swift */,
+				CECA6C792475519600AC7C12 /* MainViewController.swift */,
 				CECA6C6B24754D9C00AC7C12 /* Main.storyboard */,
 				CECA6C6E24754D9E00AC7C12 /* Assets.xcassets */,
 				CECA6C7024754D9E00AC7C12 /* LaunchScreen.storyboard */,
@@ -138,9 +135,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CECA6C6A24754D9C00AC7C12 /* ViewController.swift in Sources */,
 				CECA6C6624754D9C00AC7C12 /* AppDelegate.swift in Sources */,
-				CECA6C6824754D9C00AC7C12 /* SceneDelegate.swift in Sources */,
+				CECA6C7A2475519600AC7C12 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +283,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2PQNZ2TUC3;
 				INFOPLIST_FILE = MyPlaces/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -294,7 +291,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ulkoart.MyPlaces;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -305,6 +302,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2PQNZ2TUC3;
 				INFOPLIST_FILE = MyPlaces/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +310,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ulkoart.MyPlaces;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
