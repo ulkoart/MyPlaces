@@ -9,15 +9,12 @@
 import UIKit
 
 class MainViewController: UITableViewController {
+        
+    let places:Array<Place> = Place.getPlaces()
     
-    let restaruansNames:Array<String> = [
-        "Мясоlove", "Кафе Винсент", "Станъ",
-        "Диканька", "Пушкинист", "Ресторан \"Барин\"",
-        "Камелот", "Bellini"
-    ]
-
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.tableView.separatorStyle = .none
     }
 
     // MARK: - Table view data source
@@ -27,7 +24,7 @@ class MainViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return restaruansNames.count
+        return places.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -35,20 +32,16 @@ class MainViewController: UITableViewController {
             fatalError()
         }
         
-        cell.nameLabel?.text = restaruansNames[indexPath.row]
-        cell.imageOfPlace?.image = UIImage(named: restaruansNames[indexPath.row])
-        cell.imageOfPlace?.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
-        cell.imageOfPlace?.clipsToBounds = true
+        cell.nameLabel.text = places[indexPath.row].name
+        cell.locationLabel.text = places[indexPath.row].location
+        cell.typeLabel.text = places[indexPath.row].type
+        cell.imageOfPlace.image = UIImage(named: places[indexPath.row].image)
+        cell.imageOfPlace.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
+        cell.imageOfPlace.clipsToBounds = true
         
         return cell
     }
     
-    // MARK: - Table view delegate
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 85
-    }
-
     /*
     // MARK: - Navigation
 
@@ -58,5 +51,7 @@ class MainViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func cancelAction(_ segue: UIStoryboardSegue) {}
 
 }
