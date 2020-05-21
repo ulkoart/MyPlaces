@@ -6,14 +6,15 @@
 //  Copyright © 2020 ulkoart. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Place {
     
     var name: String
-    var location: String
-    var type: String
-    var image: String
+    var location: String?
+    var type: String?
+    var restaurantImage: String?
+    var image: UIImage?
     
     static let restaruansNames:Array<String> = [
         "Мясоlove", "Кафе Винсент", "Станъ",
@@ -29,10 +30,18 @@ struct Place {
 //        }
         
         restaruansNames.forEach {
-            places.append(Place(name: $0, location: "Краснодар", type: "Ресторан", image: $0))
+            places.append(
+                Place(
+                    name: $0,
+                    location: "Краснодар",
+                    type: "Ресторан",
+                    restaurantImage: $0,
+                    image: nil
+            ))
         }
         
         return places
     }
+
     
 }

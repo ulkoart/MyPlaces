@@ -64,11 +64,11 @@
 				CECA6C792475519600AC7C12 /* MainViewController.swift */,
 				CE933C8124765B3000EA75C6 /* CustomTableViewCell.swift */,
 				CE933C8724767EBB00EA75C6 /* NewPlaceTableViewController.swift */,
-				CE933C8524767B9A00EA75C6 /* Main.storyboard */,
-				CECA6C6E24754D9E00AC7C12 /* Assets.xcassets */,
-				CECA6C7024754D9E00AC7C12 /* LaunchScreen.storyboard */,
-				CECA6C7324754D9E00AC7C12 /* Info.plist */,
 				CE933C83247661D600EA75C6 /* PlaceModel.swift */,
+				CE933C8524767B9A00EA75C6 /* Main.storyboard */,
+				CECA6C7024754D9E00AC7C12 /* LaunchScreen.storyboard */,
+				CECA6C6E24754D9E00AC7C12 /* Assets.xcassets */,
+				CECA6C7324754D9E00AC7C12 /* Info.plist */,
 			);
 			path = MyPlaces;
 			sourceTree = "<group>";
