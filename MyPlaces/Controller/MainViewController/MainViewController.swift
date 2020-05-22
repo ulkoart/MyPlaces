@@ -10,13 +10,21 @@ import UIKit
 import RealmSwift
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-        
-    @IBOutlet weak var tableView: UITableView!
     var places:Results<Place>!
+    var ascendingSorting = true
     
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var reversedSortiringButton: UIBarButtonItem!
+    @IBOutlet weak var tableView: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // guard let identifier: String = UIDevice.current.identifierForVendor?.uuidString else { return }
+        // print(Realm.Configuration.defaultConfiguration.fileURL!)
+        
         places = realm.objects(Place.self)
+        
         // self.tableView.separatorStyle = .none
     }
 
@@ -88,5 +96,32 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.reloadData()
     }
     
+    
+    @IBAction func sortSelection(_ sender: UISegmentedControl) {
+        sorting()
+    }
+    
+    @IBAction func reversedSorting(_ sender: Any) {
+        ascendingSorting.toggle()
+        
+        if ascendingSorting {
+            reversedSortiringButton.image = #imageLiteral(resourceName: "list")
+        } else {
+            reversedSortiringButton.image = #imageLiteral(resourceName: "sort")
+        }
+        
+        sorting()
+        
+    }
+    
+    private func sorting() {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            places = places.sorted(byKeyPath: "date", ascending: ascendingSorting)
+        } else {
+            places = places.sorted(byKeyPath: "name", ascending: ascendingSorting)
+        }
+        
+        tableView.reloadData()
+    }
 
 }
