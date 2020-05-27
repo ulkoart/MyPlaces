@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		6763977F675E105200825084 /* Pods_MyPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB287ADDF00CF283F58C387 /* Pods_MyPlaces.framework */; };
+		CE501667247E93DA00780943 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE501666247E93DA00780943 /* RatingControl.swift */; };
+		CE50166B247E963100780943 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE50166A247E963100780943 /* Main.storyboard */; };
 		CE8CE1242477A47C0071553C /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CE1232477A47C0071553C /* StorageManager.swift */; };
 		CE933C8224765B3000EA75C6 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE933C8124765B3000EA75C6 /* CustomTableViewCell.swift */; };
 		CE933C84247661D600EA75C6 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE933C83247661D600EA75C6 /* PlaceModel.swift */; };
-		CE933C8624767B9A00EA75C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE933C8524767B9A00EA75C6 /* Main.storyboard */; };
 		CE933C8824767EBB00EA75C6 /* NewPlaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE933C8724767EBB00EA75C6 /* NewPlaceTableViewController.swift */; };
 		CECA6C6624754D9C00AC7C12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA6C6524754D9C00AC7C12 /* AppDelegate.swift */; };
 		CECA6C6F24754D9E00AC7C12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CECA6C6E24754D9E00AC7C12 /* Assets.xcassets */; };
@@ -22,11 +23,11 @@
 /* Begin PBXFileReference section */
 		2DAC4F1C277BFC1C525A4B25 /* Pods-MyPlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyPlaces/Pods-MyPlaces.debug.xcconfig"; sourceTree = "<group>"; };
 		2EB287ADDF00CF283F58C387 /* Pods_MyPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE501665247E5B0F00780943 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		CE501666247E93DA00780943 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		CE50166A247E963100780943 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../../.Trash/Main.storyboard; sourceTree = "<group>"; };
 		CE8CE1232477A47C0071553C /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		CE933C8124765B3000EA75C6 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		CE933C83247661D600EA75C6 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
-		CE933C8524767B9A00EA75C6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../.Trash/Main.storyboard; sourceTree = "<group>"; };
 		CE933C8724767EBB00EA75C6 /* NewPlaceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceTableViewController.swift; sourceTree = "<group>"; };
 		CECA6C6224754D9C00AC7C12 /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECA6C6524754D9C00AC7C12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,9 +70,10 @@
 		CE2EA2012476C52A00AADDE8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CE8CE1222477A4570071553C /* MainViewController */,
-				CECA6C6524754D9C00AC7C12 /* AppDelegate.swift */,
+				CECA6C792475519600AC7C12 /* MainViewController.swift */,
+				CE933C8124765B3000EA75C6 /* CustomTableViewCell.swift */,
 				CE933C8724767EBB00EA75C6 /* NewPlaceTableViewController.swift */,
+				CE501666247E93DA00780943 /* RatingControl.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -79,7 +81,7 @@
 		CE2EA2022476C53700AADDE8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CE501665247E5B0F00780943 /* Main.storyboard */,
+				CE50166A247E963100780943 /* Main.storyboard */,
 				CECA6C7024754D9E00AC7C12 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -94,21 +96,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		CE2EA2052476C55B00AADDE8 /* Cell */ = {
+		CE501668247E95DE00780943 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				CE933C8124765B3000EA75C6 /* CustomTableViewCell.swift */,
+				CECA6C6E24754D9E00AC7C12 /* Assets.xcassets */,
 			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		CE8CE1222477A4570071553C /* MainViewController */ = {
-			isa = PBXGroup;
-			children = (
-				CE2EA2052476C55B00AADDE8 /* Cell */,
-				CECA6C792475519600AC7C12 /* MainViewController.swift */,
-			);
-			path = MainViewController;
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		CECA6C5924754D9C00AC7C12 = {
@@ -135,8 +128,8 @@
 				CE2EA2032476C53F00AADDE8 /* Model */,
 				CE2EA2022476C53700AADDE8 /* View */,
 				CE2EA2012476C52A00AADDE8 /* Controller */,
-				CE933C8524767B9A00EA75C6 /* Main.storyboard */,
-				CECA6C6E24754D9E00AC7C12 /* Assets.xcassets */,
+				CE501668247E95DE00780943 /* Assets */,
+				CECA6C6524754D9C00AC7C12 /* AppDelegate.swift */,
 				CECA6C7324754D9E00AC7C12 /* Info.plist */,
 			);
 			path = MyPlaces;
@@ -202,7 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE933C8624767B9A00EA75C6 /* Main.storyboard in Resources */,
+				CE50166B247E963100780943 /* Main.storyboard in Resources */,
 				CECA6C7224754D9E00AC7C12 /* LaunchScreen.storyboard in Resources */,
 				CECA6C6F24754D9E00AC7C12 /* Assets.xcassets in Resources */,
 			);
@@ -256,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE501667247E93DA00780943 /* RatingControl.swift in Sources */,
 				CE933C8224765B3000EA75C6 /* CustomTableViewCell.swift in Sources */,
 				CE933C84247661D600EA75C6 /* PlaceModel.swift in Sources */,
 				CECA6C6624754D9C00AC7C12 /* AppDelegate.swift in Sources */,
