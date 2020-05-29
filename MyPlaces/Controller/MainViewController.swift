@@ -31,7 +31,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         
         // guard let identifier: String = UIDevice.current.identifierForVendor?.uuidString else { return }
-        // print(Realm.Configuration.defaultConfiguration.fileURL!)
+         print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         places = realm.objects(Place.self)
         
@@ -56,7 +56,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if isFiltering {
             return filtredPlaces.count
         }
-        return places.isEmpty ? 0: places.count
+        return places.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,20 +64,14 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             fatalError()
         }
         
-        var place = Place()
-        if isFiltering {
-            place = filtredPlaces[indexPath.row]
-        } else {
-            place = places[indexPath.row]
-        }
+        let place = isFiltering ? filtredPlaces[indexPath.row] : places[indexPath.row]
        
-        
         cell.nameLabel.text = place.name
         cell.locationLabel.text = place.location
         cell.typeLabel.text = place.type
         cell.imageOfPlace.image = UIImage(data: place.imageData!)
-        cell.imageOfPlace.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
-        cell.imageOfPlace.clipsToBounds = true
+
+        cell.cosmosView.rating = place.rating
         
         return cell
     }
@@ -113,12 +107,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if segue.identifier == "showDetail" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             
-            var place = Place()
-            if isFiltering {
-                place = filtredPlaces[indexPath.row]
-            } else {
-                place = places[indexPath.row]
-            }
+            let place = isFiltering ? filtredPlaces[indexPath.row] : places[indexPath.row]
             
             guard let newPlaceVC = segue.destination as? NewPlaceTableViewController else { return }
             newPlaceVC.currentPlace = place
