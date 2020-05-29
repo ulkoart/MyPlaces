@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		6763977F675E105200825084 /* Pods_MyPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB287ADDF00CF283F58C387 /* Pods_MyPlaces.framework */; };
 		CE501667247E93DA00780943 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE501666247E93DA00780943 /* RatingControl.swift */; };
-		CE50166B247E963100780943 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE50166A247E963100780943 /* Main.storyboard */; };
 		CE8CE1242477A47C0071553C /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CE1232477A47C0071553C /* StorageManager.swift */; };
 		CE933C8224765B3000EA75C6 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE933C8124765B3000EA75C6 /* CustomTableViewCell.swift */; };
 		CE933C84247661D600EA75C6 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE933C83247661D600EA75C6 /* PlaceModel.swift */; };
@@ -18,13 +17,13 @@
 		CECA6C6F24754D9E00AC7C12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CECA6C6E24754D9E00AC7C12 /* Assets.xcassets */; };
 		CECA6C7224754D9E00AC7C12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECA6C7024754D9E00AC7C12 /* LaunchScreen.storyboard */; };
 		CECA6C7A2475519600AC7C12 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA6C792475519600AC7C12 /* MainViewController.swift */; };
+		CEE067582480DA5500660EFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE067572480DA5500660EFB /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2DAC4F1C277BFC1C525A4B25 /* Pods-MyPlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyPlaces/Pods-MyPlaces.debug.xcconfig"; sourceTree = "<group>"; };
 		2EB287ADDF00CF283F58C387 /* Pods_MyPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE501666247E93DA00780943 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
-		CE50166A247E963100780943 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../../.Trash/Main.storyboard; sourceTree = "<group>"; };
 		CE8CE1232477A47C0071553C /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		CE933C8124765B3000EA75C6 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		CE933C83247661D600EA75C6 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
@@ -35,6 +34,7 @@
 		CECA6C7124754D9E00AC7C12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CECA6C7324754D9E00AC7C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CECA6C792475519600AC7C12 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CEE067572480DA5500660EFB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E71E79D3A6B0FB02B295A95C /* Pods-MyPlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyPlaces/Pods-MyPlaces.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,7 +81,7 @@
 		CE2EA2022476C53700AADDE8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CE50166A247E963100780943 /* Main.storyboard */,
+				CEE067572480DA5500660EFB /* Main.storyboard */,
 				CECA6C7024754D9E00AC7C12 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -195,9 +195,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE50166B247E963100780943 /* Main.storyboard in Resources */,
 				CECA6C7224754D9E00AC7C12 /* LaunchScreen.storyboard in Resources */,
 				CECA6C6F24754D9E00AC7C12 /* Assets.xcassets in Resources */,
+				CEE067582480DA5500660EFB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
