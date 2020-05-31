@@ -12,7 +12,7 @@ class NewPlaceTableViewController: UITableViewController {
     
     var currentPlace: Place?
     var imageIsChanged = false
-
+    
     @IBOutlet weak var placeImage: UIImageView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var placeName: UITextField!
@@ -60,10 +60,24 @@ class NewPlaceTableViewController: UITableViewController {
             actionSheet.addAction(cancel)
             
             present(actionSheet, animated: true)
-        
+            
         } else {
             view.endEditing(true)
         }
+    }
+    
+    // MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != "showMap" {
+            return
+        }
+        
+        guard let mapVC = segue.destination as? MapViewController else { return }
+        mapVC.place.name = placeName.text!
+        mapVC.place.location = placeLocation.text
+        mapVC.place.type = placeType.text
+        mapVC.place.imageData = placeImage.image?.pngData()
     }
     
     @IBAction func cancelAction(_ sender: UIBarButtonItem) {
@@ -72,16 +86,10 @@ class NewPlaceTableViewController: UITableViewController {
     
     func savePlace() {
         guard let placeNameText = placeName.text else { return }
-    
-        var image: UIImage?
         
-        if imageIsChanged {
-            image = placeImage.image
-        } else {
-            image = #imageLiteral(resourceName: "restaurant-1")
-        }
+        let image = imageIsChanged ? placeImage.image : #imageLiteral(resourceName: "restaurant-1")
         
-         let newPlace = Place(
+        let newPlace = Place(
             name: placeNameText,
             location: placeLocation.text,
             type: placeType.text,
@@ -125,7 +133,7 @@ class NewPlaceTableViewController: UITableViewController {
         title = currentPlace?.name
         saveButton.isEnabled = true
     }
-
+    
 }
 
 extension NewPlaceTableViewController: UITextFieldDelegate {

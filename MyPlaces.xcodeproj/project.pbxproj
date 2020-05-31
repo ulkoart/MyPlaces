@@ -18,6 +18,7 @@
 		CECA6C7224754D9E00AC7C12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECA6C7024754D9E00AC7C12 /* LaunchScreen.storyboard */; };
 		CECA6C7A2475519600AC7C12 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA6C792475519600AC7C12 /* MainViewController.swift */; };
 		CEE067582480DA5500660EFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE067572480DA5500660EFB /* Main.storyboard */; };
+		CEE0675A2481394E00660EFB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE067592481394E00660EFB /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		CECA6C7324754D9E00AC7C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CECA6C792475519600AC7C12 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CEE067572480DA5500660EFB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		CEE067592481394E00660EFB /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E71E79D3A6B0FB02B295A95C /* Pods-MyPlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyPlaces/Pods-MyPlaces.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +76,7 @@
 				CE933C8124765B3000EA75C6 /* CustomTableViewCell.swift */,
 				CE933C8724767EBB00EA75C6 /* NewPlaceTableViewController.swift */,
 				CE501666247E93DA00780943 /* RatingControl.swift */,
+				CEE067592481394E00660EFB /* MapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				CE8CE1242477A47C0071553C /* StorageManager.swift in Sources */,
 				CECA6C7A2475519600AC7C12 /* MainViewController.swift in Sources */,
 				CE933C8824767EBB00EA75C6 /* NewPlaceTableViewController.swift in Sources */,
+				CEE0675A2481394E00660EFB /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
