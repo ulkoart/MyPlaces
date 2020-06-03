@@ -16,30 +16,59 @@ class MapViewController: UIViewController {
     let annotationIdentifier = "annotationIdentifier"
     let locationManager = CLLocationManager()
     let regionInMeters = 10_000.00
-
-    @IBOutlet weak var mapView: MKMapView!
+    var incomeSeguaIdentifier: String = ""
+    
+    @IBOutlet var mapPinImage: UIImageView!
+    @IBOutlet var mapView: MKMapView!
+    @IBOutlet var adressLabel: UILabel!
+    @IBOutlet var doneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        adressLabel.text = ""
         mapView.delegate = self
-        setupPlaceMark()
+        setupMapView()
         checkLocationServices()
     }
     
     @IBAction func centerViewInUserLocation() {
+        showUserLocation()
+    }
+    
+    @IBAction func doneButtonPressed(_ sender: Any) {
+        
+    }
+    
+    @IBAction func closeCV() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    private func showUserLocation() {
         if let location = locationManager.location?.coordinate {
             let region = MKCoordinateRegion(
                 center: location,
                 latitudinalMeters: regionInMeters,
                 longitudinalMeters: regionInMeters
             )
-            
             mapView.setRegion(region, animated: true)
         }
     }
     
-    @IBAction func closeCV() {
-        dismiss(animated: true, completion: nil)
+    private func getCenterLocation(for mapView: MKMapView) -> CLLocation {
+        let latitude = mapView.centerCoordinate.latitude
+        let longitude = mapView.centerCoordinate.longitude
+        
+        return CLLocation(latitude: latitude, longitude: longitude)
+    }
+    
+    private func setupMapView() {
+        if incomeSeguaIdentifier == "showPlace" {
+            setupPlaceMark()
+            mapPinImage.isHidden = true
+            doneButton.isHidden = true
+            mapPinImage.isHidden = true
+            adressLabel.isHidden = true
+        }
     }
     
     private func setupPlaceMark() {
@@ -91,6 +120,7 @@ class MapViewController: UIViewController {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:
             mapView.showsUserLocation = true
+            if incomeSeguaIdentifier == "getAdress" { showUserLocation() }
             break
         case .denied:
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -146,6 +176,37 @@ extension MapViewController: MKMapViewDelegate {
         
         return annotationView
         
+    }
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        let center = getCenterLocation(for: mapView)
+        let geocoder = CLGeocoder()
+        
+        geocoder.reverseGeocodeLocation(center) { (placemarks, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            guard let placemarks = placemarks else { return }
+            let placemark = placemarks.first
+            let streetName = placemark?.thoroughfare
+            let buildNumber = placemark?.subThoroughfare
+            
+            DispatchQueue.main.async {
+                if streetName != nil && buildNumber != nil {
+                    self.adressLabel.text = "\(streetName!), \(buildNumber!)"
+                } else if streetName != nil {
+                    self.adressLabel.text = "\(streetName!)"
+                } else {
+                    self.adressLabel.text = ""
+                }
+                
+                
+            }
+            
+            
+        }
     }
 }
 
