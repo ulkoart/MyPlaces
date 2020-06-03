@@ -9,7 +9,9 @@
 import UIKit
 import RealmSwift
 
+
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
     
     private let searchController = UISearchController(searchResultsController: nil)
     private var places:Results<Place>!

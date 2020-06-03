@@ -124,7 +124,7 @@
                                                     </constraints>
                                                     <state key="normal" image="gps"/>
                                                     <connections>
-                                                        <segue destination="JuW-Ab-Y8V" kind="presentation" identifier="getAdress" id="9Vg-Tu-34L"/>
+                                                        <segue destination="JuW-Ab-Y8V" kind="presentation" identifier="getAddress" id="9Vg-Tu-34L"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -307,7 +307,7 @@
                         <viewLayoutGuide key="safeArea" id="XLi-Yv-KoI"/>
                     </view>
                     <connections>
-                        <outlet property="adressLabel" destination="42F-Ph-1Kg" id="9Mh-8C-mlX"/>
+                        <outlet property="addressLabel" destination="42F-Ph-1Kg" id="9Mh-8C-mlX"/>
                         <outlet property="doneButton" destination="cF6-Nm-vX5" id="nXR-i2-AVg"/>
                         <outlet property="mapPinImage" destination="yYg-jj-qtt" id="mZK-9K-YvE"/>
                         <outlet property="mapView" destination="G5O-k0-3Ne" id="FyV-ks-QBa"/>
@@ -329,7 +329,7 @@
                                 <rect key="frame" x="0.0" y="117" width="414" height="779"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="oge-8q-Rve" customClass="CustomTableViewCell" customModule="MyPlaces" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="oge-8q-Rve" customClass="CustomTableViewCell" customModule="MyPlaces" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oge-8q-Rve" id="Dcw-S2-ROa">
@@ -500,7 +500,7 @@
         <image name="star3" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jIj-dS-OUf"/>
+        <segue reference="9Vg-Tu-34L"/>
         <segue reference="m4G-eP-lkh"/>
     </inferredMetricsTieBreakers>
 </document>
