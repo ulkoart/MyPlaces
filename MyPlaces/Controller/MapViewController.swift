@@ -24,11 +24,13 @@ class MapViewController: UIViewController {
     let locationManager = CLLocationManager()
     let regionInMeters = 10_000.00
     var incomeSeguaIdentifier: String = ""
+    var placeCoordinate: CLLocationCoordinate2D?
     
     @IBOutlet var mapPinImage: UIImageView!
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var addressLabel: UILabel!
     @IBOutlet var doneButton: UIButton!
+    @IBOutlet var goButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +42,11 @@ class MapViewController: UIViewController {
     
     @IBAction func centerViewInUserLocation() {
         showUserLocation()
+    }
+    
+    
+    @IBAction func goButtonPressed() {
+        getDirections()
     }
     
     @IBAction func doneButtonPressed(_ sender: Any) {
@@ -69,13 +76,66 @@ class MapViewController: UIViewController {
         return CLLocation(latitude: latitude, longitude: longitude)
     }
     
+    private func getDirections() {
+        guard let location = locationManager.location?.coordinate else {
+            showAlert(title: "Error", message: "location not found")
+            return
+        }
+        
+        guard let request = createDirectionRequest(from: location) else {
+            showAlert(title: "Error", message: "destination not found")
+            return
+        }
+        
+        let direction = MKDirections(request: request)
+        direction.calculate { (response, error) in
+            if let error = error {
+                print(error)
+            }
+            
+            guard let response = response else {
+                self.showAlert(title: "Error", message: "not found")
+                return
+            }
+            
+            for route in response.routes {
+                self.mapView.addOverlay(route.polyline)
+                self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+                
+                let distance = String(format: "%1.f", route.distance / 1000)
+                let timeInterval = route.expectedTravelTime
+                
+                print(distance)
+                print(timeInterval)
+            }
+        }
+    }
+    
+    private func createDirectionRequest(from coordinate: CLLocationCoordinate2D) -> MKDirections.Request? {
+        guard let destinationCoordinate =  placeCoordinate else { return nil }
+        let startingLocation = MKPlacemark(coordinate: coordinate)
+        let destination = MKPlacemark(coordinate: destinationCoordinate)
+        
+        let request = MKDirections.Request()
+        request.source = MKMapItem(placemark: startingLocation)
+        request.destination = MKMapItem(placemark: destination)
+        request.transportType = .automobile
+        request.requestsAlternateRoutes = true
+        
+        return request
+    }
+    
     private func setupMapView() {
+        
+        goButton.isHidden = true
+        
         if incomeSeguaIdentifier == "showPlace" {
             setupPlaceMark()
             mapPinImage.isHidden = true
             doneButton.isHidden = true
             mapPinImage.isHidden = true
             addressLabel.isHidden = true
+            goButton.isHidden = false
         }
     }
     
@@ -99,6 +159,7 @@ class MapViewController: UIViewController {
             guard let placemarkLocation = placemark?.location else { return }
             
             annotation.coordinate = placemarkLocation.coordinate
+            self.placeCoordinate = placemarkLocation.coordinate
             
             self.mapView.showAnnotations([annotation], animated: true)
             self.mapView.selectAnnotation(annotation, animated: true)
@@ -215,6 +276,13 @@ extension MapViewController: MKMapViewDelegate {
             
             
         }
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
+        renderer.strokeColor = .blue
+        
+        return renderer
     }
 }
 

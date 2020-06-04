@@ -285,6 +285,17 @@
                                     <action selector="doneButtonPressed:" destination="JuW-Ab-Y8V" eventType="touchUpInside" id="FzM-VG-jz4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hea-6U-6yb">
+                                <rect key="frame" x="182" y="772" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="9Jv-ry-4R2"/>
+                                    <constraint firstAttribute="height" constant="50" id="mVZ-Bz-zr3"/>
+                                </constraints>
+                                <state key="normal" image="way"/>
+                                <connections>
+                                    <action selector="goButtonPressed" destination="JuW-Ab-Y8V" eventType="touchUpInside" id="crf-oX-oIc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -295,11 +306,13 @@
                             <constraint firstItem="yF0-WK-zNO" firstAttribute="top" secondItem="XLi-Yv-KoI" secondAttribute="top" constant="40" id="Apk-c9-90C"/>
                             <constraint firstAttribute="bottom" secondItem="G5O-k0-3Ne" secondAttribute="bottom" id="I6l-4I-Dpz"/>
                             <constraint firstItem="XLi-Yv-KoI" firstAttribute="trailing" secondItem="kLQ-Tl-Cvp" secondAttribute="trailing" constant="40" id="IDK-Xq-XzQ"/>
+                            <constraint firstItem="XLi-Yv-KoI" firstAttribute="bottom" secondItem="hea-6U-6yb" secondAttribute="bottom" constant="40" id="NeT-xQ-hWN"/>
                             <constraint firstItem="G5O-k0-3Ne" firstAttribute="top" secondItem="R7J-mD-mw6" secondAttribute="top" id="O1w-Od-hla"/>
                             <constraint firstItem="XLi-Yv-KoI" firstAttribute="bottom" secondItem="kLQ-Tl-Cvp" secondAttribute="bottom" constant="40" id="P2d-S5-qZ3"/>
                             <constraint firstItem="XLi-Yv-KoI" firstAttribute="trailing" secondItem="42F-Ph-1Kg" secondAttribute="trailing" constant="20" id="QG6-20-SlV"/>
                             <constraint firstItem="XLi-Yv-KoI" firstAttribute="trailing" secondItem="yF0-WK-zNO" secondAttribute="trailing" constant="40" id="Uev-yc-ypW"/>
                             <constraint firstItem="XLi-Yv-KoI" firstAttribute="bottom" secondItem="cF6-Nm-vX5" secondAttribute="bottom" constant="40" id="Vcm-0A-TfV"/>
+                            <constraint firstItem="hea-6U-6yb" firstAttribute="centerX" secondItem="R7J-mD-mw6" secondAttribute="centerX" id="dYY-5y-hwc"/>
                             <constraint firstItem="42F-Ph-1Kg" firstAttribute="top" secondItem="R7J-mD-mw6" secondAttribute="topMargin" constant="154" id="fI4-eh-jeH"/>
                             <constraint firstItem="42F-Ph-1Kg" firstAttribute="leading" secondItem="XLi-Yv-KoI" secondAttribute="leading" constant="20" id="ijU-VI-wLD"/>
                             <constraint firstItem="yYg-jj-qtt" firstAttribute="centerY" secondItem="R7J-mD-mw6" secondAttribute="centerY" constant="-20" id="sPr-0O-cBT"/>
@@ -309,6 +322,7 @@
                     <connections>
                         <outlet property="addressLabel" destination="42F-Ph-1Kg" id="9Mh-8C-mlX"/>
                         <outlet property="doneButton" destination="cF6-Nm-vX5" id="nXR-i2-AVg"/>
+                        <outlet property="goButton" destination="hea-6U-6yb" id="xPQ-IC-5eL"/>
                         <outlet property="mapPinImage" destination="yYg-jj-qtt" id="mZK-9K-YvE"/>
                         <outlet property="mapView" destination="G5O-k0-3Ne" id="FyV-ks-QBa"/>
                     </connections>
@@ -329,7 +343,7 @@
                                 <rect key="frame" x="0.0" y="117" width="414" height="779"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="oge-8q-Rve" customClass="CustomTableViewCell" customModule="MyPlaces" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="oge-8q-Rve" customClass="CustomTableViewCell" customModule="MyPlaces" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oge-8q-Rve" id="Dcw-S2-ROa">
@@ -498,6 +512,7 @@
         <image name="map" width="384" height="384"/>
         <image name="star2" width="48" height="48"/>
         <image name="star3" width="48" height="48"/>
+        <image name="way" width="384" height="384"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="9Vg-Tu-34L"/>
