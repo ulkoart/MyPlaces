@@ -21,7 +21,7 @@ class NewPlaceTableViewController: UITableViewController {
     @IBOutlet weak var ratingControl: RatingControl!
     
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
         tableView.tableFooterView = UIView(frame: CGRect(
             x: 0, y: 0, width: tableView.frame.size.width, height: 1
         ))
@@ -75,8 +75,8 @@ class NewPlaceTableViewController: UITableViewController {
             else { return }
         
         
-        mapVC.incomeSeguaIdentifier = identifier
-        mapVC.mapViewControllerDeletate = self
+        mapVC.incomeSegueIdentifier = identifier
+        mapVC.mapViewControllerDelegate = self
         
         if identifier == "showPlace" {
             mapVC.place.name = placeName.text!
@@ -179,7 +179,7 @@ extension NewPlaceTableViewController: UIImagePickerControllerDelegate, UINaviga
     }
 }
 
-extension NewPlaceTableViewController: MapViewControllerDeletate {
+extension NewPlaceTableViewController: MapViewControllerDelegate {
     func getAddress(_ address: String?) {
         placeLocation.text = address
     }

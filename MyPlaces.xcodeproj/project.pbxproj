@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6763977F675E105200825084 /* Pods_MyPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB287ADDF00CF283F58C387 /* Pods_MyPlaces.framework */; };
 		CE220FBA2488EB1F00EFA033 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE220FB92488EB1E00EFA033 /* Assets.xcassets */; };
+		CE220FBC24890DA100EFA033 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE220FBB24890DA100EFA033 /* MapManager.swift */; };
 		CE501667247E93DA00780943 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE501666247E93DA00780943 /* RatingControl.swift */; };
 		CE8CE1242477A47C0071553C /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CE1232477A47C0071553C /* StorageManager.swift */; };
 		CE933C8224765B3000EA75C6 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE933C8124765B3000EA75C6 /* CustomTableViewCell.swift */; };
@@ -25,6 +26,7 @@
 		2DAC4F1C277BFC1C525A4B25 /* Pods-MyPlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyPlaces/Pods-MyPlaces.debug.xcconfig"; sourceTree = "<group>"; };
 		2EB287ADDF00CF283F58C387 /* Pods_MyPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE220FB92488EB1E00EFA033 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE220FBB24890DA100EFA033 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		CE501666247E93DA00780943 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		CE8CE1232477A47C0071553C /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		CE933C8124765B3000EA75C6 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				CE933C8724767EBB00EA75C6 /* NewPlaceTableViewController.swift */,
 				CE501666247E93DA00780943 /* RatingControl.swift */,
 				CEE067592481394E00660EFB /* MapViewController.swift */,
+				CE220FBB24890DA100EFA033 /* MapManager.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				CE933C8224765B3000EA75C6 /* CustomTableViewCell.swift in Sources */,
 				CE933C84247661D600EA75C6 /* PlaceModel.swift in Sources */,
 				CECA6C6624754D9C00AC7C12 /* AppDelegate.swift in Sources */,
+				CE220FBC24890DA100EFA033 /* MapManager.swift in Sources */,
 				CE8CE1242477A47C0071553C /* StorageManager.swift in Sources */,
 				CECA6C7A2475519600AC7C12 /* MainViewController.swift in Sources */,
 				CE933C8824767EBB00EA75C6 /* NewPlaceTableViewController.swift in Sources */,

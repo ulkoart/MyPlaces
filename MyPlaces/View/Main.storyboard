@@ -248,7 +248,7 @@
                                 </constraints>
                                 <state key="normal" image="close"/>
                                 <connections>
-                                    <action selector="closeCV" destination="JuW-Ab-Y8V" eventType="touchUpInside" id="qxL-l9-dTT"/>
+                                    <action selector="closeVC" destination="JuW-Ab-Y8V" eventType="touchUpInside" id="Mbe-IB-Mmc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLQ-Tl-Cvp">
@@ -282,7 +282,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="doneButtonPressed:" destination="JuW-Ab-Y8V" eventType="touchUpInside" id="FzM-VG-jz4"/>
+                                    <action selector="doneButtonPressed" destination="JuW-Ab-Y8V" eventType="touchUpInside" id="w0C-ef-es1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hea-6U-6yb">
@@ -321,7 +321,7 @@
                     </view>
                     <connections>
                         <outlet property="addressLabel" destination="42F-Ph-1Kg" id="9Mh-8C-mlX"/>
-                        <outlet property="doneButton" destination="cF6-Nm-vX5" id="nXR-i2-AVg"/>
+                        <outlet property="doneButton" destination="cF6-Nm-vX5" id="xcp-9Y-RBj"/>
                         <outlet property="goButton" destination="hea-6U-6yb" id="xPQ-IC-5eL"/>
                         <outlet property="mapPinImage" destination="yYg-jj-qtt" id="mZK-9K-YvE"/>
                         <outlet property="mapView" destination="G5O-k0-3Ne" id="FyV-ks-QBa"/>
