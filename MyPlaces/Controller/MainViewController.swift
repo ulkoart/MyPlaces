@@ -25,15 +25,15 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return searchController.isActive && !searchBarIsEmpty
     }
     
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
-    @IBOutlet weak var reversedSortiringButton: UIBarButtonItem!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private var segmentedControl: UISegmentedControl!
+    @IBOutlet private var reversedSortiringButton: UIBarButtonItem!
+    @IBOutlet private var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // guard let identifier: String = UIDevice.current.identifierForVendor?.uuidString else { return }
-         print(Realm.Configuration.defaultConfiguration.fileURL!)
+        // print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         places = realm.objects(Place.self)
         
