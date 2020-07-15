@@ -34,6 +34,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         // guard let identifier: String = UIDevice.current.identifierForVendor?.uuidString else { return }
         // print(Realm.Configuration.defaultConfiguration.fileURL!)
+        // print realm url
         
         places = realm.objects(Place.self)
         
